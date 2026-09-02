@@ -3,6 +3,7 @@ Phase 1: Python Fundamentals
 Covers: variables, types, operators, conditionals, loops, data structures, built-ins
 """
 
+
 # ---------- Variables & Types ----------
 name = "Mona"
 age = 25
