@@ -1,16 +1,4 @@
-"""
-Phase 1: Python Fundamentals
-Covers: variables, types, operators, conditionals, loops, data structures, built-ins
-"""
-
-
-# ---------- Variables & Types ----------
-name = "Mona"
-age = 25
-height = 5.4
-is_developer = True
-
-print(f"Name: {name}, Age: {age}, Height: {height}, Developer: {is_developer}")
+ 
 
 # ---------- Type Conversion ----------
 age_as_text = str(age)
