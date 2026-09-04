@@ -29,12 +29,11 @@ print(f"Power with custom exponent: {power(5, 3)}")
 def add_all(*numbers):
     return sum(numbers)
 
-print(f"Sum of multiple numbers: {add_all(1, 2, 3, 4)}")
-
+               
 def print_details(**info):
     for key, value in info.items():
         print(f"{key}: {value}")
-
+                 
 print_details(name="Mona", role="Frontend Developer", city="Lahore")
 
 # ---------- Local vs Global Scope ----------
@@ -57,7 +56,7 @@ print(f"Total with type hints: {calculate_total_with_hints(15.5, 2)}")
 # ---------- List Comprehension ----------
 numbers = [1, 2, 3, 4, 5]
 squares = [n ** 2 for n in numbers]
-print(f"Squares: {squares}")
+print(f"Squares: {squares}")       
 
 even_numbers = [n for n in numbers if n % 2 == 0]
 print(f"Even numbers: {even_numbers}")

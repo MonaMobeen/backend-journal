@@ -1,3 +1,6 @@
+
+name = "Mona"
+age = 25
 # ---------- Type Conversion ----------
 age_as_text = str(age)
 text_number = "100"
