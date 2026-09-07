@@ -3,7 +3,7 @@
 
 ## Phase Index
 
-| Phase | Domain | Core Engineering Concern |
+| Phase | Domain | Core Engineering Internals |
 |---|---|---|
 | 1 | Language Fundamentals | Correct primitive usage; choosing the right data structure for access pattern and mutability requirements |
 | 2 | Function Design | Argument contracts (`*args`/`**kwargs`), scope discipline, type-annotated signatures |
@@ -18,20 +18,9 @@
 ## Running Any Phase
 
 Phases 1, 2, 3, 5, 6, and 7 are standalone scripts:
+ 
 
-```bash
-python Python_Resources/phase1.py
-```
-
-Phase 4 is a package and must be run as a module from the directory containing it, due to its use of relative imports internally:
-
-```bash
-python -m Python_Resources.phase4.main
-```
-
----
-
-## Engineering Principles Applied
+## Engineering Principles  
 
 - **Explicit over implicit** — every transformation is traceable to a specific, intentional line of code; nothing relies on Python "magic" the reader has to reverse-engineer.
 - **Fail loud, fail specific** — exceptions are caught by type, never blanket-suppressed; a silent `except: pass` is treated as a defect, not a shortcut.
