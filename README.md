@@ -17,7 +17,7 @@
 
 ## Running Any Phase
 
-Phases 1, 2, 3, 5, 6, and 7 are standalone scripts:
+Phases 1, 2, 3, 5, 6, and 7 are standalone scripts.
  
 
 ## Engineering Principles  
