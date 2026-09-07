@@ -52,7 +52,7 @@ unique_ids = {1, 2, 2, 3, 3, 3}
 print(f"Unique IDs set: {unique_ids}")
 
 # Dictionary
-user = {"name": "Mona", "age": 25, "role": "Frontend Developer"}
+user = {"name": "Frozen", "age": 25, "role": "Growth Engineer"}
 print(f"User dictionary: {user}")
 
 # ---------- Built-in Functions ----------
