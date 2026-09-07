@@ -52,10 +52,12 @@ unique_ids = {1, 2, 2, 3, 3, 3}
 print(f"Unique IDs set: {unique_ids}")
 
 # Dictionary
+
 user = {"name": "Frozen", "age": 25, "role": "Growth Engineer"}
 print(f"User dictionary: {user}")
 
 # ---------- Built-in Functions ----------
+
 nums = [4, 2, 9, 1, 7]
 print(f"Length: {len(nums)}")
 print(f"Sum: {sum(nums)}")
