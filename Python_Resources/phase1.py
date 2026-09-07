@@ -68,4 +68,4 @@ for index, value in enumerate(nums):
  
 print("Any/All example:")
 print(f"Any negative? {any(n < 0 for n in nums)}")
-print(f"All positive? {all(n > 0 for n in nums)}")    
+print(f"All positive? {all(n > 0 for n in nums)}")
