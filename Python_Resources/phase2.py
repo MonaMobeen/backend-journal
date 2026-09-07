@@ -73,4 +73,4 @@ print(f"Unique name lengths: {unique_lengths}")
 # ---------- Conditional Expressions (ternary) ----------
 age = 20
 status = "Adult" if age >= 18 else "Minor"
-print(f"Status: {status}")
+print(f"Status: {status}")    

@@ -5,7 +5,7 @@ numbers_iterator = iter(numbers)
 
 # ---------- iter() and next() ----------
 print(next(numbers_iterator))  # 1
-print(next(numbers_iterator))  # 2
+print(next(numbers_iterator))   # 2
 print(next(numbers_iterator))  # 3
 
 # ---------- StopIteration ----------
@@ -69,7 +69,7 @@ def process_large_file(file_path):
         for line in file:
             yield line.strip()
 
-# Create a small sample file to demonstrate the pattern
+# Create a s     mall sample file to demonstrate the pattern
 sample_file_path = "sample_data.txt"
 with open(sample_file_path, "w", encoding="utf-8") as sample_file:
     sample_file.write("line one\nline two\nline three\n")
@@ -88,3 +88,4 @@ sample_data = list(range(10))
 print("Chunk-based processing output:")
 for chunk in chunk_data(sample_data, 3):
     print(chunk)
+    
