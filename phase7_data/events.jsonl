@@ -1,0 +1,3 @@
+{"event": "login", "user": "mona"}
+{"event": "click", "user": "mona"}
+{"event": "logout", "user": "mona"}
