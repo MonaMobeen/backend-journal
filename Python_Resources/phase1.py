@@ -1,5 +1,5 @@
 
-name = "Mona"
+name = "Jhon Dhoe"
 age = 25
 # ---------- Type Conversion ----------
 age_as_text = str(age)
