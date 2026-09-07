@@ -44,10 +44,12 @@ fruits.append("orange")
 print(f"Fruits list: {fruits}")
 
 # Tuple
+
 point = (10, 20)
 print(f"Point tuple: {point}")
 
 # Set
+
 unique_ids = {1, 2, 2, 3, 3, 3}
 print(f"Unique IDs set: {unique_ids}")
 
