@@ -16,7 +16,7 @@ def introduce(name, age):
     print(f"My name is {name} and I am {age} years old.")
 
 introduce("Frozen", 25)              # positional
-introduce(age=25, name="Mona")     # keyword
+introduce(age=25, name="Frozen")     # keyword
 
 # ---------- Default Arguments ----------
 def power(base, exponent=2):
