@@ -15,7 +15,7 @@ print(f"Total: {total}")
 def introduce(name, age):
     print(f"My name is {name} and I am {age} years old.")
 
-introduce("Mona", 25)              # positional
+introduce("Frozen", 25)              # positional
 introduce(age=25, name="Mona")     # keyword
 
 # ---------- Default Arguments ----------
@@ -34,7 +34,7 @@ def print_details(**info):
     for key, value in info.items():
         print(f"{key}: {value}")
                  
-print_details(name="Mona", role="Frontend Developer", city="Lahore")
+print_details(name="Frozen", role="Frontend Developer", city="Lahore")
 
 # ---------- Local vs Global Scope ----------
 counter = 0  # global variable
@@ -62,7 +62,7 @@ even_numbers = [n for n in numbers if n % 2 == 0]
 print(f"Even numbers: {even_numbers}")
 
 # ---------- Dictionary Comprehension ----------
-names = ["Ali", "Sara", "Zain"]
+names = ["Mobeen", "Sara", "Sana"]
 name_lengths = {name: len(name) for name in names}
 print(f"Name lengths: {name_lengths}")
 
