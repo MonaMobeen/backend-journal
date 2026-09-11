@@ -70,9 +70,9 @@ def process_large_file(file_path):
             yield line.strip()
 
 # Create a s     mall sample file to demonstrate the pattern
-sample_file_path = "sample_data.txt"
+sample_file_path = "figuring_out.txt"
 with open(sample_file_path, "w", encoding="utf-8") as sample_file:
-    sample_file.write("line one\nline two\nline three\n")
+    sample_file.write("Frozen is a great movie\nIt gives us the meaningful and deep emotional lesson\nThe story teaches us about sisterly love and courage\nElsa learns to accept who she truly is\nThe animation and music make it even more special")
 
 print("Processing file line by line using a generator:")
 for processed_line in process_large_file(sample_file_path):
