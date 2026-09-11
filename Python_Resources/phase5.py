@@ -4,14 +4,13 @@ from dataclasses import dataclass
 # ---------- Classes and Objects ----------
 class Dog:
     # ---------- Class Attribute ----------
-    # Shared by ALL instances of this class, unless overridden per-instance
     species = "Canis familiaris"
 
     # ---------- __init__ and Instance Attributes ----------
     def __init__(self, name: str, age: int):
-        self.name = name   # instance attribute - unique to each object
+        self.name = name    
         self.age = age
-        self._energy = 100  # "protected" attribute (see Encapsulation below)
+        self._energy = 100   
 
     # ---------- Instance Method ----------
     def bark(self):
