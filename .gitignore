@@ -1,1 +1,7 @@
 practise.py
+sample_data.txt
+phase7_data
+.venv/
+__pycache__/
+*.pyc
+figuring_out.txt
