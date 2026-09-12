@@ -1,2 +1,0 @@
-Learning Python file handling.
-This line was written using a context manager.
