@@ -111,4 +111,4 @@ def encoding_example():
 
 encoding_example() 
 
-print("\nAll Phase 7 file operations completed. Check the 'phase7_data' folder.")
+print("\nAll Phase 7 file operations completed. Covered 4 types of files: txt,csv,json,jsonl")
