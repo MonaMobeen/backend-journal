@@ -34,8 +34,8 @@ read_text_file()
 # ---------- CSV ----------
 def write_csv_file():
     rows = [
-        {"name": "Mona", "role": "Frontend Developer"},
-        {"name": "Ali", "role": "Backend Developer"},
+        {"name": "Minal", "role": "Frontend Developer"},
+        {"name": "Mobeen", "role": "Backend Developer"},
     ]
     with csv_path.open("w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=["name", "role"])
