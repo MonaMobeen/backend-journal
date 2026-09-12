@@ -1,0 +1,19 @@
+[project]
+name = "python-roadmap"
+version = "0.1.0"
+description = "A phased software engineering implementing core Python semantics from control-flow primitives and iterator protocols to object-oriented architecture, modular package design, and exception-handling strategy, structured as a progressive skill-acquisition framework.
+
+Engineering Principles
+Explicit over implicit — every transformation is traceable to a specific, intentional line of code; nothing relies on Python "magic" the reader has to reverse-engineer.
+Fail loud, fail specific — exceptions are caught by type, never blanket-suppressed; a silent except: pass is treated as a defect, not a shortcut.
+Memory-aware by default — where a dataset could scale beyond what fits comfortably in memory, the code path defaults to a generator, not a materialized list.
+Separation of concerns — business logic, data shape, and low-level utilities are never mixed in the same module once the codebase outgrows a single script (Phase 4 onward).
+Progressive, non-regressive complexity — each phase's code builds on primitives established in the phase before it; nothing introduced early is contradicted later.
+
+"
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
