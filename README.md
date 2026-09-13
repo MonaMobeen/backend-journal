@@ -10,17 +10,24 @@ The guiding principle throughout: **every abstraction is chosen because of a tra
 
 ```
 Python_Resources/
-├── phase2.py     # Functional decomposition & parameter design
-├── phase3.py     # Iterator protocol, generators, lazy evaluation
-├── phase4/       # Package architecture (models / services / utils)
+├── phase1.py                    # Language fundamentals & core data structures
+├── phase2.py                    # Functional decomposition & parameter design
+├── phase3.py                    # Iterator protocol, generators, lazy evaluation
+├── phase4/                      # Package architecture (models / services / utils)
 │   ├── main.py
 │   ├── models/
 │   ├── services/
 │   └── utils/
-├── phase5.py     # Object-oriented design: composition vs. inheritance
-├── phase6.py     # Exception strategy & propagation
-├── phase7.py     # Structured data I/O (CSV, JSON, JSONL, encoding)
-├── phase8.py     # Environment isolation & dependency management
+├── phase5.py                    # Object-oriented design: composition vs. inheritance
+├── phase6.py                    # Exception strategy & propagation
+├── phase7.py                    # Structured data I/O (CSV, JSON, JSONL, encoding)
+├── phase8.py                    # Environment isolation & dependency management
+├── phase9.py                    # Clean, maintainable Python
+├── phase10.py                   # Debugging & structured logging
+├── phase11_calculator.py        # Code under test
+├── test_phase11_calculator.py   # pytest suite: unit tests, fixtures, mocking
+├── phase12.py                   # Functional programming
+├── phase13.py                   # Advanced Python: closures, decorators, dunders
 ├── requirements.txt
 ├── pyproject.toml
 └── .gitignore
@@ -29,6 +36,9 @@ Python_Resources/
 ---
 
 ## Phase Notes
+
+### Phase 1 — Language Fundamentals
+Primitive types, operators, control flow, and the four core data structures (list, tuple, set, dict), chosen deliberately based on mutability and access-pattern requirements rather than habit.
 
 ### Phase 2 — Functional Decomposition
 Parameterization strategy is treated as a design decision, not boilerplate: positional vs. keyword arguments, `*args`/`**kwargs` for variadic interfaces, default values, and static type annotations. The trade-off called out explicitly is that variadic signatures (`*args`, `**kwargs`) trade static type-checkability for flexibility — mitigated here via type hints, internal validation, and reserving variadic signatures for genuinely generic call sites (decorators, dispatchers) rather than domain functions.
@@ -53,6 +63,21 @@ Text, CSV, JSON, and JSONL, with `pathlib` for cross-platform path handling and 
 ### Phase 8 — Environment & Dependency Management
 Documents `venv` creation/activation and the `requirements.txt` / `pyproject.toml` split: the former as a lockfile-style dependency snapshot, the latter as project metadata and build configuration. The repository is intentionally dependency-free at this stage — `dependencies = []` — since introducing a package before there is a real need for it would misrepresent what the code actually requires.
 
+### Phase 9 — Clean, Maintainable Python
+PEP 8 conventions, meaningful naming, single-responsibility functions, DRY principles, constants over magic values, and guard clauses to eliminate deep nesting.
+
+### Phase 10 — Debugging & Logging
+Traceback interpretation, `breakpoint()`-driven interactive debugging, call-stack reasoning, and severity-tiered structured logging (`debug` → `critical`).
+
+### Phase 11 — Testing
+Unit tests, `pytest` fixtures, parameterized test cases, and mocking external dependencies to isolate units under test. Code under test (`phase11_calculator.py`) and its test suite (`test_phase11_calculator.py`) are kept in separate files, mirroring standard test-discovery conventions.
+
+### Phase 12 — Functional Programming
+First-class functions, pure functions, higher-order functions, `map`/`filter`/`reduce`, `lambda`, and `functools.partial`, with an explicit example of favoring named, decomposed steps over a single unreadable chained expression.
+
+### Phase 13 — Advanced Python
+Closures, decorators, the context manager protocol (`__enter__`/`__exit__`), and dunder methods (`__repr__`, `__len__`, `__eq__`) for native integration with Python's built-in behaviors (`print()`, `len()`, `==`).
+
 ---
 
 ## Cross-Cutting Themes
@@ -62,8 +87,9 @@ Documents `venv` creation/activation and the `requirements.txt` / `pyproject.tom
 | Lazy evaluation over eager materialization | Phase 3 generators, Phase 7 JSONL |
 | Explicit dependency direction | Phase 4 package layering |
 | Composition over inheritance, used judiciously | Phase 5 |
-| Fail loud, log with context, handle at the right layer | Phase 6 |
+| Fail loud, log with context, handle at the right layer | Phase 6, Phase 10 |
 | No implicit platform behavior (always specify) | Phase 7 encoding, Phase 8 pinned versions |
+| Readability over cleverness | Phase 9, Phase 12 |
 
 ---
 
@@ -71,18 +97,38 @@ Documents `venv` creation/activation and the `requirements.txt` / `pyproject.tom
 
 Single-file phases run directly:
 ```bash
+python phase1.py
 python phase2.py
 python phase3.py
 python phase5.py
 python phase6.py
 python phase7.py
 python phase8.py
+python phase9.py
+python phase10.py
+python phase12.py
+python phase13.py
 ```
 
 Phase 4 is a package and must be run as a module from the parent directory:
 ```bash
 python -m phase4.main
 ```
+
+Phase 11 requires `pytest`:
+```bash
+pip install pytest --break-system-packages
+pytest test_phase11_calculator.py -v
+```
+
+---
+
+## Engineering Principles Applied
+
+- **Explicit over implicit** — every transformation is traceable and intentional
+- **Memory-aware design** — generator-based lazy evaluation is preferred over eager materialization where scale is a concern
+- **Separation of concerns** — logic is decomposed into single-responsibility functions
+- **Progressive complexity** — each phase builds directly on primitives established in the previous phase
 
 ---
 
