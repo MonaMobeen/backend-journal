@@ -1,9 +1,3 @@
-"""
-Phase 10: Debugging and Logging
-Covers: reading tracebacks, breakpoint(), variable inspection, call stack,
-structured logging, logging levels
-"""
-
 import logging
 
 # ---------- Structured Logging Setup ----------
