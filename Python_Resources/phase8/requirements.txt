@@ -1,9 +1,1 @@
-# This project currently has no external dependencies.
-# Everything used so far comes from Python's built-in standard library
-# (csv, json, pathlib, logging, dataclasses, etc.)
-#
-# When you install a package in the future, add it here like this:
-#   requests==2.31.0
-#
-# Or generate this file automatically after installing packages:
-#   pip freeze > requirements.txt
+ 

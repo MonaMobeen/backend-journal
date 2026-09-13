@@ -1,5 +1,5 @@
 [project]
-name = "python-roadmap"
+name = "python-resources"
 version = "0.1.0"
 description = "A phased software engineering implementing core Python semantics from control-flow primitives and iterator protocols to object-oriented architecture, modular package design, and exception-handling strategy, structured as a progressive skill-acquisition framework.
 
