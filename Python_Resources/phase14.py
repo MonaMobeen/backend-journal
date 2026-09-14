@@ -2,6 +2,7 @@ import asyncio
 import time
 import threading
 import multiprocessing
+import aiohttp 
 
 
 # ---------- Threading for I/O-Bound Work ----------
@@ -95,6 +96,15 @@ async def bad_async_example():
 
 # For real CPU-heavy work, use multiprocessing instead of async.
 
+# ---------- Async HTTP Client Example ----------
+async def fetch_data(url):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            data = await response.json()
+            print(data)
+
+
+asyncio.run(fetch_data("https://jsonplaceholder.typicode.com/users"))
 
 # ---------- Cancellation and Timeouts ----------
 async def slow_operation():
@@ -113,3 +123,24 @@ async def run_with_timeout():
 
 
 asyncio.run(run_with_timeout())
+
+# ----------Example #01 Asyncio Event Loop ----------
+
+async def task(name, delay):
+    print(f"{name} started")
+    await asyncio.sleep(delay)
+    print(f"{name} finished")
+
+
+async def main():
+    await asyncio.gather(
+        task("Task 1", 2),
+        task("Task 2", 1),
+        task("Task 3", 3)
+    )
+
+
+asyncio.run(main())
+
+
+ 
