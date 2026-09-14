@@ -5,7 +5,11 @@ from pydantic import BaseModel
 app = FastAPI(title="Phase 15 - Python APIs")
 
 
-# ---------- Pydantic Model ----------
+# ---------- Pydantic Validation  ----------
+
+# Pydantic models define the SHAPE of expected data, and automatically
+# validate incoming request bodies against it - if the data doesn't match,
+# FastAPI returns a clear error automatically, before your code even runs.
 class User(BaseModel):
     name: str
     email: str
@@ -17,12 +21,14 @@ users = {
     1: {
         "id": 1,
         "name": "Mona",
-        "email": "monaa@yahoo.com",
+        "email": "monamobeen@yahoo.com",
         "role": "Engineer",
         "city": "Lahore"
     },
      2: {
+         "id": 2,
          "name": "Mobeen", 
+         "email": "mobeenmona@yahoo.com",
          "role": "OD & Culture",
          "city": "FSD"
          },
@@ -113,6 +119,9 @@ def admin(user=Depends(get_current_user)):
 
 
 # ---------- Middleware ----------
+
+# Middleware runs code BEFORE and AFTER every request, regardless of
+# which endpoint was called - useful for logging, timing, or auth checks.
 @app.middleware("http")
 async def log_requests(request, call_next):
 
