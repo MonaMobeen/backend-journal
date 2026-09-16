@@ -30,6 +30,11 @@ Python_Resources/
 ├── phase13.py                   # Advanced Python: closures, decorators, dunders
 ├── requirements.txt
 ├── pyproject.toml
+├── phase14.py                   # Concurrency & parallelism: threading, multiprocessing, asyncio
+├── phase15/                     # FastAPI service — validation, dependency injection, middleware
+│   └── main.py
+├── phase16.py                   # Database programming: sqlite3, transactions, SQLAlchemy ORM
+├── phase17.py                   # Data processing: CSV/JSONL at scale, chunking, Pandas/NumPy
 └── .gitignore
 ```
 
@@ -77,6 +82,23 @@ First-class functions, pure functions, higher-order functions, `map`/`filter`/`r
 
 ### Phase 13 — Advanced Python
 Closures, decorators, the context manager protocol (`__enter__`/`__exit__`), and dunder methods (`__repr__`, `__len__`, `__eq__`) for native integration with Python's built-in behaviors (`print()`, `len()`, `==`).
+### Phase 14 — Concurrency & Parallelism
+
+Distinguishes concurrency (interleaved progress on multiple tasks) from parallelism (simultaneous execution across cores), and matches the mechanism to the bottleneck: threading for I/O-bound waiting, multiprocessing for CPU-bound work where the GIL would otherwise serialize execution, and asyncio/async/await for high-concurrency I/O without OS-thread overhead. Explicit about the common misapplication — awaiting doesn't parallelize computation, it only yields control during I/O waits — plus cancellation and timeout handling as first-class concerns rather than an afterthought.
+
+### Phase 15 — APIs with Python (FastAPI)
+
+A minimal FastAPI service (phase15/main.py) demonstrating the full request lifecycle: path/query parameters, request-body validation via Pydantic models (schema declared once, enforced automatically before the handler runs), dependency injection for cross-cutting concerns (auth context, existence checks) decoupled from route logic, middleware for request/response-level instrumentation, and structured HTTPException handling in place of unhandled failures surfacing as generic 500s. In-memory storage stands in for persistence to keep the phase scoped to the HTTP layer.
+
+Run: uvicorn phase15.main:app --reload, then inspect the generated OpenAPI docs at /docs.
+
+### Phase 16 — Database Programming
+
+Contrasts raw DB-API usage (sqlite3: connections, cursors, explicit commit/rollback) against ORM-mediated access (SQLAlchemy: declarative models, session-scoped queries). Parameterized queries are treated as the only acceptable form of query construction — string interpolation into SQL is an injection vector, not a style issue. Transactions are demonstrated as an atomicity boundary (multi-statement, all-or-nothing), and connection pooling is discussed conceptually as the reason ORMs manage connections internally rather than opening one per call.
+
+### Phase 17 — Data Processing
+
+Extends Phase 3/7's lazy-evaluation and structured-I/O patterns to tabular data at larger scale: row-by-row CSV processing via generators, CSV→JSONL conversion for line-oriented downstream processing, chunked batch processing as a middle ground between per-row and full-materialization strategies, and an optional Pandas/NumPy section expressing the same filter/group-by operations with vectorized primitives instead of manual loops — included as a productivity layer, not a replacement for understanding the underlying operations.
 
 ---
 
@@ -108,6 +130,10 @@ python phase9.py
 python phase10.py
 python phase12.py
 python phase13.py
+python phase14.py
+uvicorn phase15.main:app --reload
+python phase16.py
+python phase17.py
 ```
 
 Phase 4 is a package and must be run as a module from the parent directory:
@@ -120,6 +146,7 @@ Phase 11 requires `pytest`:
 pip install pytest --break-system-packages
 pytest test_phase11_calculator.py -v
 ```
+
 
 ---
 
